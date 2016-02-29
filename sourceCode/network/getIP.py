@@ -21,7 +21,7 @@ def check_network():
 
 def getIP():                           #获取IP地址并发送
     try:
-        lan_address = socket.gethostbyname(socket.gethostname())
+        lan_address = get_lan_address()
         IP_address = visit("http://www.bliao.com/ip.phtml")
     except:
         try:
@@ -42,6 +42,13 @@ def visit(url):                             #没啥说的
     if url == opener.geturl():
         str = opener.read()
     return re.search('\d+\.\d+\.\d+\.\d+',str).group(0)
+
+def get_lan_address():    #获取本地IP
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    s.connect(("1.1.1.1",80))
+    ipaddr=s.getsockname()[0]
+    s.close()
+    return ipaddr
     
 if __name__ == "__main__":
     check_network()
