@@ -16,8 +16,9 @@ def check_network():
         except Exception , e:
            print e
            print "Network is not ready,Sleep 5s...."
-           time.sleep(5)
+           time.sleep(100)
     getIP()
+    print "发送成功"
 
 def getIP():                           #获取IP地址并发送
     try:
@@ -35,6 +36,7 @@ def getIP():                           #获取IP地址并发送
     event_name = "getip"
     message = {"lan_address":lan_address, "IP_address":IP_address}
     pushMessage(event_name, message)
+    print "发送成功"
     
    
 def visit(url):                             #没啥说的
