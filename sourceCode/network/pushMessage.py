@@ -1,17 +1,17 @@
-#coding = utf-8
+#coding=utf-8
 
 
 from instapush import Instapush, App
 
-App_ID = "56d11f995659e3652ec56c64"
-App_secret = "00f263a58cd1d408c5cf7ecff08cc9dc"
+App_ID = "56d428bb5659e36b6be7ddf2"
+App_secret = "ac45c1173fb2a7a1822e9ebbb06e3736"
 
 def pushMessage(event_name, message):
     
     '''
     Args:
-        event_name: 发送到instapush对应的App名称
-        message: 要推送的信息, dict类型，{key1:value1, key2:value2},对应于instapush相应的trackers
+        event_name: 鍙戦�佸埌instapush瀵瑰簲鐨凙pp鍚嶇О
+        message: 瑕佹帹閫佺殑淇℃伅, dict绫诲瀷锛寋key1:value1, key2:value2},瀵瑰簲浜巌nstapush鐩稿簲鐨則rackers
     '''
     
     app = App(appid=App_ID, secret=App_secret)
@@ -19,4 +19,4 @@ def pushMessage(event_name, message):
     
 
 if __name__ == "__main__":
-    pushMessage("hello", {"message":"hello"})
+    pushMessage('getip', {'IP_address': '113.251.168.74', 'lan_address': '192.168.56.1'})
