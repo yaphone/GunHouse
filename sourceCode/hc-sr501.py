@@ -1,37 +1,38 @@
+#coding=utf-8
+
 import RPi.GPIO as GPIO
 import time
  
-#³õÊ¼»¯
+#åˆå§‹åŒ–
 def init():
     GPIO.setwarnings(False)
     GPIO.setmode(GPIO.BOARD)
-    GPIO.setup(18,GPIO.IN)
+    GPIO.setup(12,GPIO.IN)
     GPIO.setup(21,GPIO.OUT)
     pass
  
-#·äÃùÆ÷Ãù½Ğº¯Êı
+#èœ‚é¸£å™¨é¸£å«å‡½æ•°
 def beep():
-    while GPIO.input(26):
+    while GPIO.input(12):
         GPIO.output(21,GPIO.LOW)
         time.sleep(0.5)
         GPIO.output(21,GPIO.HIGH)
         time.sleep(0.5)
-#¸ĞÓ¦Æ÷Õì²âº¯Êı
+#æ„Ÿåº”å™¨ä¾¦æµ‹å‡½æ•°
 def detct():
-    #ÒòÎªÊÇ½ö½öÊÔÑé£¬ËùÒÔÖ»ÈÃËüÑ­»·ÔËĞĞ100´Î
+    #å› ä¸ºæ˜¯ä»…ä»…è¯•éªŒï¼Œæ‰€ä»¥åªè®©å®ƒå¾ªç¯è¿è¡Œ100æ¬¡
     while True:
-        #Èç¹û¸ĞÓ¦Æ÷Õë½ÅÊä³öÎªTrue£¬Ôò´òÓ¡ĞÅÏ¢²¢Ö´ĞĞ·äÃùÆ÷º¯Êı
-        if GPIO.input(26) == True:
+        #å¦‚æœæ„Ÿåº”å™¨é’ˆè„šè¾“å‡ºä¸ºTrueï¼Œåˆ™æ‰“å°ä¿¡æ¯å¹¶æ‰§è¡Œèœ‚é¸£å™¨å‡½æ•°
+        if GPIO.input(12) == True:
             print "Someone isclosing!"
             beep()
-        #·ñÔò½«·äÃùÆ÷µÄÕë½ÅµçÆ½ÉèÖÃÎªHIGH
+        #å¦åˆ™å°†èœ‚é¸£å™¨çš„é’ˆè„šç”µå¹³è®¾ç½®ä¸ºHIGH
         else:
             GPIO.output(21,GPIO.HIGH)
             print "Noanybody!"
-        time.sleep(2)
+        time.sleep(1)
  
-
 init()
 detct()
-#½Å±¾ÔËĞĞÍê±ÏÖ´ĞĞÇåÀí¹¤×÷
+#è„šæœ¬è¿è¡Œå®Œæ¯•æ‰§è¡Œæ¸…ç†å·¥ä½œ
 GPIO.cleanup()
