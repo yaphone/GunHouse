@@ -11,13 +11,15 @@ def downloadFile():
     
     bucket = BucketManager(q)
     
-    bucket_domain = "7xr9yr.com1.z0.glb.clouddn.com/"
+    bucket_domain = "7xrczn.com1.z0.glb.clouddn.com/"
     file_list = listAllFile()
     for image_name in file_list:
         base_url = "http://%s%s" % (bucket_domain, image_name)
-        response = requests.get(base_url)
+        private_url = q.private_download_url(base_url, expires=3600)
+        print private_url
+        response = requests.get(private_url)
         image = response.content
-        save_dir = "C:/Users/Administrator/Desktop/tmp/"
+        save_dir = "/Users/zhouyafeng/Desktop/github/GunHouse/download/"
     
         print(u"保存文件到"+save_dir+"\n")
         try:
