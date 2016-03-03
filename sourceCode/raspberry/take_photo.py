@@ -5,11 +5,13 @@ import time
 def takePhoto():
     path = os.path.dirname(os.path.dirname(os.getcwd()))
     photo_path = os.path.join(path, 'photo/')    #相册路径
-    photo_time = time.ctime()
+    local_time = time.localtime()
+    photo_time = time.strftime('%Y_%m_%d_%H_%M_%S',local_time)
     photo_name = photo_path + photo_time
     
     take_photo_command = 'raspistill -o' + photo_name
     os.system(take_photo_command)
+    
     
     
     
