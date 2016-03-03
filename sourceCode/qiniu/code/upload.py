@@ -12,8 +12,7 @@ def uploadFile():
     
     #上传文件
     path = os.getcwd()
-    parent_path = os.path.dirname(path)    #上级目录
-    file_path = os.path.join(parent_path, 'file')
+    file_path = gf.photo_path
     file_list = os.listdir(file_path)   
     for file_name in file_list:
         localfile = os.path.join(file_path, file_name)
