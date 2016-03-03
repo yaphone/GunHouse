@@ -8,6 +8,7 @@ def listAllFile():
     q = gf.q
     
     bucket = BucketManager(q)
+    bucket_name = gf.bucket_name
     file_list = list_all(bucket_name, bucket, prefix=None, limit=None)  #文件列表
     return file_list                                   #返回文件列表
     
