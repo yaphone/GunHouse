@@ -14,5 +14,6 @@ def push_to_server_chan(text, desp):
     
 if __name__ == "__main__":
     text = "HelloWorld"
-    desp = "![logo](http://sc.ftqq.com/static/image/bottom_logo.png)"
+    desp = "\"![logo](http://sc.ftqq.com/static/image/bottom_logo.png)\""
+#    desp = "http://7xrczn.com1.z0.glb.clouddn.com/2.png?e=1457175281&token=kMXZldZ8vQ4WFw2Oujn0d9QAAUJtyVBgBmVNmEM_:B75h5myWLfSKOJMVcT4FuWkqrxw="
     push_to_server_chan(text, desp)
