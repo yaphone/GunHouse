@@ -1,5 +1,5 @@
 #coding=utf-8
-from network import *
+from network import pushToServerChan
 from raspberry import *
 from myqiniu.code import upload
 import time
@@ -19,7 +19,7 @@ def gunHouseMain():
             if current_status == 0 and previous_status==1:     #门刚被打开
                 text = u"枪库已打开"
                 local_time = time.localtime()
-                current_time = time.strftime('%Y:%m:%d %H:%M:%S',local_time)
+                current_time = time.strftime('%Y:%m:%d_%H:%M:%S',local_time)
                 desp = u"枪库于%s被打开,图像抓取程序已启动" %current_time
                 pushToServerChan.push_to_server_chan(text, desp)
             while current_status == 0:          #门开
@@ -27,7 +27,7 @@ def gunHouseMain():
                     take_photo.takePhoto()
                     time.sleep(2)
                 recorde_video.recorde_video()
-                sleep(5)
+                time.sleep(5)
             previous_status = 1
         except:
             pass

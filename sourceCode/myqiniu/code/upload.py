@@ -36,7 +36,7 @@ def uploadFile():
                     text = upload_file_name
                     desp = download_single_file(file_name)
                     push_to_server_chan(text, desp)
-                    print "OK"
+                    print u"上传成功"
         time.sleep(10)
 
 def upload_single_file(file_name):                         #上传单个文件
@@ -56,7 +56,6 @@ def upload_single_file(file_name):                         #上传单个文件
         text = upload_file_name
         desp = download_single_file(file_name)
         push_to_server_chan(text, desp)
-        print "OK"
 
 
 
