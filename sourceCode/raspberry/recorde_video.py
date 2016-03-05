@@ -4,7 +4,7 @@ import time
 
 def recorde_video():
     path = os.path.dirname(os.path.dirname(os.getcwd()))
-    video_path = os.path.join(path, 'photo/')    #相册路径
+    video_path = os.path.join(path, 'GunHouse/photo/')    #相册路径
     local_time = time.localtime()
     video_time = time.strftime('%Y_%m_%d_%H_%M_%S',local_time)
     video_name = video_path + video_time + '.h264'

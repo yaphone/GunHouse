@@ -4,12 +4,12 @@ import time
 
 def takePhoto():
     path = os.path.dirname(os.path.dirname(os.getcwd()))
-    photo_path = os.path.join(path, 'photo/')    #相册路径
+    photo_path = os.path.join(path, 'GunHouse/photo/')    #相册路径
     local_time = time.localtime()
     photo_time = time.strftime('%Y_%m_%d_%H_%M_%S',local_time)
     photo_name = photo_path + photo_time + '.jpg'
 
-    take_photo_command = 'raspistill -t 1 -w 640 -h 480 -q 75 -o ' + photo_name
+    take_photo_command = 'sudo raspistill -t 1 -w 640 -h 480 -q 75 -o ' + photo_name
     os.system(take_photo_command)
 
 
