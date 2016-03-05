@@ -7,6 +7,7 @@ def push_to_server_chan(text, desp):
     text = text  #发送标题
     desp = desp  #发送内容
     url = server_chan_url + "text=" + text + '&' + "desp=" + desp
+    print url
     
     res = urllib.urlopen(url)
 

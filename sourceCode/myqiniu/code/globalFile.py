@@ -11,4 +11,4 @@ bucket_name = 'helloworld'
 q = Auth(access_key, secret_key)
 bucket = BucketManager(q)
 
-photo_path = os.path.join(os.path.dirname(os.getcwd()), 'file')
+photo_path = os.path.join(os.path.dirname(os.getcwd()), 'photo')
