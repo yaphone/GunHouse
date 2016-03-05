@@ -9,7 +9,7 @@ def recorde_video():
     video_time = time.strftime('%Y_%m_%d_%H_%M_%S',local_time)
     video_name = video_path + video_time + '.h264'
 
-    recorde_video_command = 'raspivid -w 640 -h 480 -t 5 -f 10 -o ' + photo_name
+    recorde_video_command = 'raspivid -w 640 -h 480 -t 5 -f 10 -o ' + video_name
     os.system(recorde_video_command)
 
 
