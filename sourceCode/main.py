@@ -31,6 +31,7 @@ def gunHouseMain():
             previous_status = 1
         except:
             pass
+        time.sleep(10)
         
         
 if __name__ == "__main__":
