@@ -1,6 +1,6 @@
 #coding=utf-8
 from network import pushToServerChan
-from raspberry import *
+from raspberry import take_photo, recorde_video
 from myqiniu.code import upload
 import time
 #import Rpi.GPIO as GPIO

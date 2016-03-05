@@ -9,7 +9,7 @@ def takePhoto():
     photo_time = time.strftime('%Y_%m_%d_%H_%M_%S',local_time)
     photo_name = photo_path + photo_time + '.jpg'
 
-    take_photo_command = 'raspistill -o ' + photo_name
+    take_photo_command = 'raspistill -t 1 -w 1920 -h 1080 -q 75 -o ' + photo_name
     os.system(take_photo_command)
 
 

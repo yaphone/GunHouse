@@ -10,7 +10,7 @@ def recorde_video():
     video_name = video_path + video_time + '.h264'
 
     recorde_video_command = 'raspivid -w 640 -h 480 -t 5 -f 10 -o ' + photo_name
-    os.system(take_photo_command)
+    os.system(recorde_video_command)
 
 
 
