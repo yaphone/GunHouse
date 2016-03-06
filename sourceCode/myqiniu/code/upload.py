@@ -38,6 +38,7 @@ def uploadFile():
                         desp = download_single_file(file_name)
                         push_to_server_chan(text, desp)
                         print u"上传成功"
+                        os.system('rm -f %s' %localfile)
         except:
             pass
         time.sleep(10)
